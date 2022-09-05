@@ -1,4 +1,4 @@
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
@@ -92,7 +92,7 @@ const Slider = () => {
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
-        <ArrowLeftOutlined />
+        <FontAwesomeIcon icon="fa-solid fa-arrow-left-long" />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
@@ -109,7 +109,7 @@ const Slider = () => {
         ))}
       </Wrapper>
       <Arrow direction="right" onClick={() => handleClick("right")}>
-        <ArrowRightOutlined />
+        <FontAwesomeIcon icon="fa-regular fa-arrow-right" />
       </Arrow>
     </Container>
   );

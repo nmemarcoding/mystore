@@ -1,8 +1,4 @@
-import {
-  FavoriteBorderOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-} from "@material-ui/icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components";
 
 const Info = styled.div`
@@ -73,13 +69,13 @@ const Product = ({ item }) => {
       <Image src={item.img} />
       <Info>
         <Icon>
-          <ShoppingCartOutlined />
+          <FontAwesomeIcon icon="fa-light fa-cart-shopping" />
         </Icon>
         <Icon>
-          <SearchOutlined />
+          <FontAwesomeIcon icon="fa-light fa-magnifying-glass" />
         </Icon>
         <Icon>
-          <FavoriteBorderOutlined />
+          <FontAwesomeIcon icon="fa-thin fa-star" />
         </Icon>
       </Info>
     </Container>

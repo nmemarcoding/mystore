@@ -1,4 +1,4 @@
-import { Add, Remove } from "@material-ui/icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -188,9 +188,9 @@ const Cart = () => {
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
-                  <Add />
+                  <FontAwesomeIcon icon="fa-solid fa-plus" />
                   <ProductAmount>2</ProductAmount>
-                  <Remove />
+                  <FontAwesomeIcon icon="fa-regular fa-xmark" />
                 </ProductAmountContainer>
                 <ProductPrice>$ 30</ProductPrice>
               </PriceDetail>
@@ -214,9 +214,9 @@ const Cart = () => {
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
-                  <Add />
+                <FontAwesomeIcon icon="fa-solid fa-plus" />
                   <ProductAmount>1</ProductAmount>
-                  <Remove />
+                  <FontAwesomeIcon icon="fa-regular fa-xmark" />
                 </ProductAmountContainer>
                 <ProductPrice>$ 20</ProductPrice>
               </PriceDetail>

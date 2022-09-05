@@ -1,12 +1,4 @@
-import {
-  Facebook,
-  Instagram,
-  MailOutline,
-  Phone,
-  Pinterest,
-  Room,
-  Twitter,
-} from "@material-ui/icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -88,7 +80,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>LAMA.</Logo>
+        <Logo>My Store.</Logo>
         <Desc>
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected
@@ -96,16 +88,16 @@ const Footer = () => {
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
-            <Facebook />
+            <FontAwesomeIcon icon="fa-brands fa-facebook" />
           </SocialIcon>
           <SocialIcon color="E4405F">
-            <Instagram />
+            <FontAwesomeIcon icon="fa-brands fa-instagram" />
           </SocialIcon>
           <SocialIcon color="55ACEE">
-            <Twitter />
+            <FontAwesomeIcon icon="fa-brands fa-twitter" />
           </SocialIcon>
           <SocialIcon color="E60023">
-            <Pinterest />
+            <FontAwesomeIcon icon="fa-brands fa-pinterest" />terest
           </SocialIcon>
         </SocialContainer>
       </Left>
@@ -127,13 +119,13 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
+        <FontAwesomeIcon icon="fa-solid fa-booth-curtain" style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
         </ContactItem>
         <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+          <FontAwesomeIcon icon="fa-solid fa-phone"  style={{marginRight:"10px"}}/> +1 234 56 78
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
+          <FontAwesomeIcon icon="fa-solid fa-inbox-out" style={{marginRight:"10px"}} /> contact@mystore.dev
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
