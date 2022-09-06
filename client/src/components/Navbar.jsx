@@ -82,10 +82,10 @@ const Navbar = () => {
         <Right>
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
+              
           <MenuItem>
-            
-              <FontAwesomeIcon icon="fa-thin fa-cart-shopping" />
-            
+          
+          <FontAwesomeIcon icon="fa-thin fa-cart-shopping" />
           </MenuItem>
         </Right>
       </Wrapper>
