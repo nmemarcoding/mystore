@@ -1,4 +1,5 @@
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import { BrowserRouter as Router,Routes,Route,Navigate } from 'react-router-dom';
+
 import Product from "./pages/Product";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
@@ -8,6 +9,7 @@ import Cart from "./pages/Cart";
  
 
 const App = () => {
+  const user = true; 
   return <Router>
   <div className="app ">
     <Routes>
@@ -15,8 +17,8 @@ const App = () => {
       <Route path="/products/:category" element={<ProductList/>}/>  
       <Route path="/product/:id" element={<Product/>}/>  
       <Route path="/cart" element={<Cart/>}/>  
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/register" element={<Register/>}/>       
+      <Route path="/login" element={user ? <Navigate replace to="/" />:<Login/>}/>
+      <Route path="/register" element={user ? <Navigate replace to="/" />:<Register/>}/>       
     </Routes>
   </div>
 </Router>
