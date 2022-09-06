@@ -5,6 +5,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60px;
+  margin-bottom:20px;
   ${mobile({ height: "50px" })}
 `;
 
@@ -85,10 +86,11 @@ const Navbar = () => {
               
           <MenuItem>
           
-          <FontAwesomeIcon icon="fa-thin fa-cart-shopping" />
+          <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
           </MenuItem>
         </Right>
       </Wrapper>
+      
     </Container>
   );
 };
