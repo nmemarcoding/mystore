@@ -1,5 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import {useLocation } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { publicRequest } from '../hooks/requestMethods';
+
 
 const Info = styled.div`
   opacity: 0;
@@ -63,6 +68,7 @@ const Icon = styled.div`
 `;
 
 const Product = ({ item }) => {
+  
   return (
     <Container>
       <Circle />
@@ -70,12 +76,17 @@ const Product = ({ item }) => {
       <Info>
         <Icon>
           <FontAwesomeIcon icon="fa-light fa-cart-shopping" />
+          shopp
         </Icon>
         <Icon>
+          <Link to ={`/product/${item._id}`}>
           <FontAwesomeIcon icon="fa-light fa-magnifying-glass" />
+          Search
+          </Link>
         </Icon>
         <Icon>
           <FontAwesomeIcon icon="fa-thin fa-star" />
+          star
         </Icon>
       </Info>
     </Container>
