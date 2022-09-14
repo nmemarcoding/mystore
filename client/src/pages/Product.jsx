@@ -8,6 +8,8 @@ import { mobile } from "../responsive";
 import {useLocation } from "react-router-dom"
 import React, { useState, useEffect } from 'react';
 import { publicRequest } from '../hooks/requestMethods';
+import {useDispatch} from "react-redux"
+import {addProduct} from "../redux/cartRedux"
 
 const Container = styled.div``;
 
@@ -125,9 +127,12 @@ const Product = () => {
   const [quantity,setQuantity] = useState(1)
   const [color,setColor] = useState("")
   const [size,setSize] = useState("")
+  const dispatch = useDispatch()
 
   const handleClick = () => {
-    
+    dispatch(
+      addProduct({...product,quantity,color,size,})
+    )
   }
 
   useEffect(() =>{
@@ -171,10 +176,11 @@ const Product = () => {
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize onChange={(e)=>setSize(e.target.value)}>
+              <FilterSize onChange={(e)=>setSize(e.target.value)} >
+                <FilterSizeOption  ></FilterSizeOption>
                 {product.size?.map((s)=>(
 
-                <FilterSizeOption>{s}</FilterSizeOption>
+                <FilterSizeOption  >{s}</FilterSizeOption>
                 ))}
                 
               </FilterSize>
