@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import {useSelector} from "react-redux"
 
 const Container = styled.div`
   height: 60px;
@@ -67,6 +68,8 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
+  const quantity = useSelector(state=>state.cart.quantity)
+  
   return (
     <Container>
       <Wrapper>
@@ -83,7 +86,7 @@ const Navbar = () => {
         <Right>
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
-              
+          <dive>{quantity}</dive>
           <MenuItem>
           
           <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
