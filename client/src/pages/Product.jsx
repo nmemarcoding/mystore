@@ -122,7 +122,13 @@ const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [product,setProduct] = useState({})
-  const [quantity,setQuantity] = useState({})
+  const [quantity,setQuantity] = useState(1)
+  const [color,setColor] = useState("")
+  const [size,setSize] = useState("")
+
+  const handleClick = () => {
+    
+  }
 
   useEffect(() =>{
     const getProducts = async ()=>{
@@ -135,6 +141,11 @@ const Product = () => {
     }
     getProducts()
   },[id])
+  useEffect(()=>{
+    if (quantity<0){
+      setQuantity(0)
+    }
+  },[quantity] )
   return (
     <Container>
       <Navbar />
@@ -152,19 +163,19 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {/* {product.color.map((c)=>(
+              {product.color?.map((c)=>(
 
-              <FilterColor color={c} key={c}/>
-              ))} */}
+              <FilterColor color={c} key={c} onClick={()=>setColor(c)}/>
+              ))}
               
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                {/* {product.size.map((s)=>(
+              <FilterSize onChange={(e)=>setSize(e.target.value)}>
+                {product.size?.map((s)=>(
 
                 <FilterSizeOption>{s}</FilterSizeOption>
-                ))} */}
+                ))}
                 
               </FilterSize>
             </Filter>
@@ -172,14 +183,14 @@ const Product = () => {
           <AddContainer>
             <AmountContainer>
             <FontAwesomeIcon icon="fa-regular fa-xmark" />
-              -
+              <dive onClick={()=>setQuantity(quantity-1)}>-</dive>
               
               
-              <Amount>1</Amount>
+              <Amount>{quantity}</Amount>
               <FontAwesomeIcon icon="fa-solid fa-plus" />
-              +
+              <dive onClick={()=>setQuantity(quantity+1)}>+</dive>
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
