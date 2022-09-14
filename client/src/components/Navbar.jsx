@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import {useSelector} from "react-redux"
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   height: 60px;
@@ -72,6 +73,7 @@ const Navbar = () => {
   
   return (
     <Container>
+      
       <Wrapper>
         <Left>
           <Language>EN</Language>
@@ -86,11 +88,14 @@ const Navbar = () => {
         <Right>
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
-          <dive>{quantity}</dive>
+         
+          <Link to="/cart">
           <MenuItem>
           
-          <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+          <FontAwesomeIcon icon="fa-sharp fa-solid fa-cart-shopping" />
+          <div>🛒{quantity}</div>
           </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
       
